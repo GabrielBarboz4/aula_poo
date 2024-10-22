@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RestController
@@ -43,7 +44,7 @@ public class PessoaController {
     }
 
     @GetMapping("/buscar/{nomePessoa}")
-    public List<Pessoa> buscarPessoaPorNome (@PathVariable String nomePessoa) {
+    public Optional<Pessoa> buscarPessoaPorNome (@PathVariable String nomePessoa) {
         return pessoaService.buscarPessoaPorNome(nomePessoa);
     }
 
